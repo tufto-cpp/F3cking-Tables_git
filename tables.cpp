@@ -22,6 +22,7 @@ struct table{
 	float R;
 	float charge;
 	Vector2 forceVector;
+	Vector2 Size;
 };
 
 void DrawWalls(std::vector<wall>& walls){
@@ -32,35 +33,57 @@ void DrawWalls(std::vector<wall>& walls){
 
 void DrawTableCircles(std::vector<table>& tables){
 	for(int i=0;i<tables.size();i++){
-		DrawCircleLines(tables[i].position.x,tables[i].position.y, tables[i].R, LIME);
-		DrawCircleV(tables[i].position, tables[i].r, GREEN);
+		DrawCircleLines(tables[i].position.x,tables[i].position.y, tables[i].R, {0, 158, 47, 150});
+		DrawCircleV(tables[i].position, tables[i].r, {0, 228, 48, 150});
+		int a = irand(0, 1);
+		DrawRectangle(tables[i].position.x - tables[i].Size.x, tables[i].position.y - tables[i].Size.y, 2*tables[i].Size.x, 2*tables[i].Size.y, {255, 161, 0, 180});
 	}
 }
 
 void CreateBox(std::vector<wall>& walls){
-	walls.resize(4);
+	walls.resize(8);
 	
-	walls[0].first.x = 50;
+	walls[0].first.x = 160;
 	walls[0].first.y = 100;
-	walls[0].second.x = 50;
-	walls[0].second.y = 300;
+	walls[0].second.x = 960;
+	walls[0].second.y = 100;
 	
-	walls[1].first.x = 50;
+	walls[1].first.x = 960;
 	walls[1].first.y = 100;
-	walls[1].second.x = 250;
-	walls[1].second.y = 100;
+	walls[1].second.x = 960;
+	walls[1].second.y = 400;
 	
-	walls[2].first.x = 250;
-	walls[2].first.y = 100;
-	walls[2].second.x = 250;
-	walls[2].second.y = 300;
+	walls[2].first.x = 960;
+	walls[2].first.y = 400;
+	walls[2].second.x = 760;
+	walls[2].second.y = 400;
 	
-	walls[3].first.x = 50;
-	walls[3].first.y = 300;
-	walls[3].second.x = 250;
-	walls[3].second.y = 300;
+	walls[3].first.x = 760;
+	walls[3].first.y = 400;
+	walls[3].second.x = 760;
+	walls[3].second.y = 600;
 	
-	walls[0].charge = walls[1].charge = walls[2].charge = walls[3].charge = 10;
+	walls[4].first.x = 760;
+	walls[4].first.y = 600;
+	walls[4].second.x = 100;
+	walls[4].second.y = 600;
+	
+	walls[5].first.x = 100;
+	walls[5].first.y = 600;
+	walls[5].second.x = 100;
+	walls[5].second.y = 440;
+	
+	walls[6].first.x = 100;
+	walls[6].first.y = 440;
+	walls[6].second.x = 160;
+	walls[6].second.y = 440;
+	
+	walls[7].first.x = 160;
+	walls[7].first.y = 440;
+	walls[7].second.x = 160;
+	walls[7].second.y = 100;
+	
+	walls[0].charge = walls[1].charge = walls[2].charge = walls[3].charge = walls[4].charge = walls[5].charge = walls[6].charge = walls[7].charge = 50;
 }
 
 float GetLength(Vector2 input){
@@ -82,16 +105,16 @@ Vector2 GetForceVector(Vector2 pos1/*current table*/, Vector2 pos2/*from where f
 	direction = GetDirection(direction);
 	float force = charge1*charge2/(distance*distance);
 	Vector2 forceVector;
-	forceVector.x = direction.x*force; 
-	forceVector.y = direction.y*force;
+	forceVector.x = direction.x*force/3; 
+	forceVector.y = direction.y*force/3;
 	return forceVector;
 }
 
 Vector2 GetForceFromWalls(table Table, std::vector<wall>& walls){
 	Vector2 upper,lower,left,right;
-	float miny = 450,maxy = 0,minx = 800,maxx = 0;
+	float miny = 720,maxy = 0,minx = 1280,maxx = 0;
 	for(int i=0;i<walls.size();i++){
-		if((Table.position.x >= walls[i].first.x && Table.position.x <= walls[i].second.x)||(Table.position.x <= walls[i].first.x && Table.position.x >= walls[i].second.x)){
+		if((Table.position.x > walls[i].first.x && Table.position.x < walls[i].second.x)||(Table.position.x < walls[i].first.x && Table.position.x > walls[i].second.x)){
 			float Yw,Yv,Xw,Xv;
 			if(walls[i].first.y >= walls[i].second.y){
 				Yw = walls[i].first.y;
@@ -120,7 +143,7 @@ Vector2 GetForceFromWalls(table Table, std::vector<wall>& walls){
 				}
 			}
 		} 
-		if((Table.position.y >= walls[i].first.y && Table.position.y <= walls[i].second.y)||(Table.position.y <= walls[i].first.y && Table.position.y >= walls[i].second.y)){
+		if((Table.position.y > walls[i].first.y && Table.position.y < walls[i].second.y)||(Table.position.y < walls[i].first.y && Table.position.y > walls[i].second.y)){
 			float Yw,Yv,Xw,Xv;
 			if(walls[i].first.x >= walls[i].second.x){
 				Yw = walls[i].first.y;
@@ -172,8 +195,8 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    const int screenWidth = 1280;
+    const int screenHeight = 720;
 
     InitWindow(screenWidth, screenHeight, "f3cking t@bles");
     
@@ -181,8 +204,8 @@ int main(void)
     std::vector<table> tables;
     CreateBox(walls);
     
-    const float tableWidth = 10;
-    const float tableLength = 30;
+    const float tableWidth = 20;
+    const float tableLength = 60;
     
     bool stable = true; // checks if the sistem is stable? if new table added its unstable
     
@@ -199,25 +222,28 @@ int main(void)
         //----------------------------------------------------------------------------------
 		if(curNum < tableNum){
 			table Da;
-			Da.charge = 10;
+			Da.charge = 30;
 			Da.r = tableWidth;
 			Da.R = sqrt(tableWidth*tableWidth+tableLength*tableLength);
-			if(curNum == 0){
-				float x = 0,y = 0;
-				for(int i=0;i<walls.size();i++){
-					x += walls[i].first.x;
-					y += walls[i].first.y;
-					x += walls[i].second.x;
-					y += walls[i].second.y;
-				}
-				x = x/walls.size()/2;
-				y = y/walls.size()/2;
-				Da.position.x = x;
-				Da.position.y = y;
+			int a = irand(0,1);
+			if(a == 1){
+				Da.Size.x = tableWidth;
+				Da.Size.y = tableLength;
 			} else {
-				Da.position.x = tables[tables.size()-1].position.x + irand(-10, 10);
-				Da.position.y = tables[tables.size()-1].position.y + irand(-10, 10);
+				Da.Size.x = tableLength;
+				Da.Size.y = tableWidth;
 			}
+			float x = 0,y = 0;
+			for(int i=0;i<walls.size();i++){
+				x += walls[i].first.x;
+				y += walls[i].first.y;
+				x += walls[i].second.x;
+				y += walls[i].second.y;
+			}
+			x = x/walls.size()/2;
+			y = y/walls.size()/2;
+			Da.position.x = x+irand(-10, 10);
+			Da.position.y = y+irand(-10, 10);
 			tables.push_back(Da);
 			stable = false;
 			curNum++;
@@ -242,7 +268,7 @@ int main(void)
 			//------------------------------------------------------------------------------
 			bool flag = true;
 			for(int i=0;i<tables.size();i++){
-				if(GetLength(tables[i].forceVector)>0.001){
+				if(GetLength(tables[i].forceVector)>0.005){
 					flag = false;
 					break;
 				}
