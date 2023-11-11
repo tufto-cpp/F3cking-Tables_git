@@ -1,0 +1,179 @@
+﻿  main.cpp
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(9,22): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(35,30): warning C4244: =: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(36,30): warning C4244: =: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(37,31): warning C4244: =: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(38,31): warning C4244: =: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(41,78): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(41,57): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(42,78): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(42,57): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(164,21): warning C4244: =: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(165,21): warning C4244: =: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(324,78): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(324,66): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(330,83): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(330,71): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(336,83): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(336,71): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(342,83): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(342,71): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(586,78): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(586,66): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(591,83): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(591,71): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(596,83): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\yasta\source\repos\STOLSTUL\main.cpp(596,71): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+  STOLSTUL.vcxproj -> C:\Users\yasta\source\repos\STOLSTUL\x64\Debug\STOLSTUL.exe
